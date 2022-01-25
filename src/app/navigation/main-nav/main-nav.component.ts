@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as data from '../data/menu';
+import { Link } from '../models/link';
 
 @Component({
   selector: 'app-main-nav',

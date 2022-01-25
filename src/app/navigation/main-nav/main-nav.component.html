@@ -9,12 +9,38 @@
     <div class="collapse navbar-collapse main-nav" id="navbarNav">
       <ul class="navbar-nav ms-auto d-flex align-items-center">
         <ng-container *ngFor="let item of menu">
-          <li *ngIf="!item.cta">
-            <a [routerLink]="item.en.link"> {{ item.en.title }}</a>
+          <li *ngIf="!item.cta" [ngClass]="{ dropdown: item.en?.dropdown }">
+            <a
+              [routerLink]="item.en?.link"
+              routerLinkActive="active"
+              *ngIf="!item.en.dropdown"
+            >
+              {{ item.en?.title }}</a
+            >
+            <a
+              *ngIf="item.en.dropdown"
+              class="dropdown-toggle"
+              href="#"
+              id="navbarDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+              >{{ item.en?.title }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li *ngFor="let subItem of item.en.dropdown">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="item.en.link + subItem.link"
+                  >{{ subItem.title }}</a
+                >
+              </li>
+            </ul>
           </li>
+
           <li *ngIf="item.cta">
-            <button *ngIf="item.cta" [routerLink]="item.en.link">
-              {{ item.en.title }}
+            <button *ngIf="item.cta" [routerLink]="item.en?.link">
+              {{ item.en?.title }}
             </button>
           </li>
         </ng-container>

@@ -11,7 +11,7 @@ import { Link } from '../models/link';
   styleUrls: ['./mobile-nav.component.scss'],
 })
 export class MobileNavComponent implements OnInit {
-  menu: Link[] = data.menu;
+  menu = data.menu;
   socials: Social[] = data2.socials;
   imgSrc?: string;
   year?: Number;

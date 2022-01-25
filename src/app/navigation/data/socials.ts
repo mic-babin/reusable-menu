@@ -16,7 +16,7 @@ export const socials = [
     url: 'https://www.youtube.com/channel/UCjrnzyO980_D1-cslFOUfrQ',
   },
   {
-    name: 'github',
+    name: 'facebook',
     url: 'https://github.com/mic-babin',
   },
 ];

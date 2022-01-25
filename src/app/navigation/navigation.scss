@@ -20,6 +20,66 @@ li {
 
 .logo-placeholder {
   height: $logoheight;
+  margin: 1rem 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  z-index: 100;
+  display: none;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0;
+  font-size: 1rem;
+  text-align: left;
+  list-style: none;
+  background-color: $backdrop;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0;
+
+  li {
+    margin: 0;
+  }
+
+  .dropdown-item {
+    color: $bg-contrast !important;
+    padding: 0.5rem;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    color: $bg-contrast;
+    background-color: $menu-color;
+  }
+}
+
+.dropdown-mobile {
+  height: 0 !important;
+  overflow: hidden;
+  margin: 0 !important;
+  .dropdown-item {
+    color: $menu-color;
+    padding: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .dropdown-item:last-of-type {
+    padding-bottom: 0;
+  }
+
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: $bg-color;
+  }
+
+  li {
+    margin: 0 !important;
+  }
+
+  &.dropped {
+    height: 100% !important;
+  }
 }
 
 // Underline animation
@@ -257,10 +317,22 @@ main.nav {
     }
   }
   ul {
+    height: calc(100%);
     list-style: none;
-    padding-left: 0;
+    padding: 0;
+    margin: 0;
+
     li {
-      margin: 2rem 0;
+      margin: 1rem 0;
+    }
+    &.mobile-links {
+      direction: rtl;
+      max-height: 420px;
+      overflow-y: scroll;
+      li {
+        direction: ltr;
+        margin: 1rem 2.5rem;
+      }
     }
   }
   .active {
@@ -270,19 +342,33 @@ main.nav {
     transform: translateX(0);
     transition: transform $short-tran ease-in;
   }
+  ::-webkit-scrollbar {
+    background-color: $bg-color;
+    width: 8px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $main-color;
+  }
+
+  ::selection {
+    color: #ffffff !important;
+    background-color: $main-color !important;
+  }
 }
 
 // Footer
 
 .copyrights {
   color: $menu-color;
-  margin: 1rem 0;
+  margin: 1rem;
   font-weight: 200;
-
   font-size: 14px;
 }
 
 .socials {
+  ul {
+    margin: 1rem;
+  }
   .icons {
     height: 25px;
     width: auto;
