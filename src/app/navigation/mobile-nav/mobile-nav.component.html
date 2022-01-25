@@ -3,9 +3,7 @@
     class="mobile-wrapper d-flex flex-column justify-content-between align-items-center"
     [ngClass]="{ show: mobile.getState() }"
   >
-    <a class="navbar-brand pt-4" href="/"
-      ><img class="logo" src="../../../assets/img/logo/logo.png" alt=""
-    /></a>
+    <span></span>
     <ul>
       <li *ngFor="let item of menu">
         <a class="" [routerLink]="item.en.link">{{ item.en.title }}</a>
@@ -13,51 +11,18 @@
     </ul>
     <div class="footer">
       <div class="socials">
-        <ul class="d-flex justify-content-around align-items-center">
-          <li>
-            <img
-              class="icons"
-              [src]="imgSrc || '../../../assets/img/icons/github.svg'"
-              (mouseover)="imgSrc = '../../../assets/img/icons/github-main.svg'"
-              (mouseout)="imgSrc = '../../../assets/img/icons/github.svg'"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="icons"
-              [src]="imgSrc || '../../../assets/img/icons/github.svg'"
-              (mouseover)="imgSrc = '../../../assets/img/icons/github-main.svg'"
-              (mouseout)="imgSrc = '../../../assets/img/icons/github.svg'"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="icons"
-              [src]="imgSrc || '../../../assets/img/icons/github.svg'"
-              (mouseover)="imgSrc = '../../../assets/img/icons/github-main.svg'"
-              (mouseout)="imgSrc = '../../../assets/img/icons/github.svg'"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="icons"
-              [src]="imgSrc || '../../../assets/img/icons/github.svg'"
-              (mouseover)="imgSrc = '../../../assets/img/icons/github-main.svg'"
-              (mouseout)="imgSrc = '../../../assets/img/icons/github.svg'"
-              alt=""
-            />
-          </li>
-          <li>
-            <img
-              class="icons"
-              [src]="imgSrc || '../../../assets/img/icons/github.svg'"
-              (mouseover)="imgSrc = '../../../assets/img/icons/github-main.svg'"
-              (mouseout)="imgSrc = '../../../assets/img/icons/github.svg'"
-              alt=""
-            />
+        <ul class="d-flex justify-content-around align-items-center mx-4">
+          <li *ngFor="let social of socials">
+            <a [href]="social.url" target="_blank" ref="noreferrer noopener">
+              <img
+                class="icons"
+                [src]="'../../../assets/img/icons/' + social.name + '.svg'"
+                (mouseover)="social.name = social.name + '-main'"
+                (mouseout)="
+                  social.name = social.name.substring(0, social.name.length - 5)
+                "
+                [alt]="social.name"
+            /></a>
           </li>
         </ul>
       </div>

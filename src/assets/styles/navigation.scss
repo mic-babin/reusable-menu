@@ -142,7 +142,7 @@ main.nav {
     }
 
     .second {
-      border: 2px solid $white;
+      border: none;
       background-color: transparent;
       width: auto;
       height: auto;
@@ -176,7 +176,7 @@ main.nav {
         transition: background-color $short-tran ease-in;
       }
       .second {
-        border: 2px solid $main-color;
+        border: none;
         transition: border-color $short-tran ease-in;
       }
     }
@@ -240,6 +240,7 @@ main.nav {
   overflow: hidden;
   transform: translateX(-420px);
   transition: transform $short-tran ease-in;
+  box-shadow: $mobile-shadow;
 
   a {
     font-size: 1.66667rem;

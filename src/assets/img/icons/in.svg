@@ -3,15 +3,14 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
 <style type="text/css">
-	.st0{fill: #888888}
+	.st0{fill:#888888;}
 </style>
 <g>
 	<g>
-		<path class="st0" d="M549,427.6c102.6-168,424.2-147.1,424.2,129v416H778.8V608.3c0-59.7-48.4-108.1-108.1-108.1l0,0
-			c-59.7,0-108.1,48.4-108.1,108.1v364.2h-198V340.4h184.2L549,427.6z"/>
-		<rect x="43.1" y="339.5" class="st0" width="197.1" height="633.1"/>
-		
-			<ellipse transform="matrix(0.2298 -0.9732 0.9732 0.2298 -29.4257 247.5564)" class="st0" cx="141.7" cy="142.4" rx="114.9" ry="114.9"/>
+		<path class="st0" d="M543.5,382.6C634.5,233.5,919.9,252,919.9,497v369.2H747.4V542.9c0-53-43-95.9-95.9-95.9l0,0
+			c-53,0-95.9,43-95.9,95.9v323.2H379.8v-561h163.5L543.5,382.6z"/>
+		<rect x="94.5" y="304.4" class="st0" width="174.9" height="561.8"/>
+		<ellipse class="st0" cx="182" cy="129.4" rx="102" ry="102"/>
 	</g>
 </g>
 </svg>
