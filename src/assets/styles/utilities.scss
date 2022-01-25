@@ -1,6 +1,6 @@
 // Texts
 .txt-dark {
-  color: $dark;
+  color: $menu-color;
 }
 .txt-main {
   color: $main-color;
@@ -15,7 +15,7 @@ button {
   text-decoration: none;
   border-radius: $button-radius;
   background: $main-color;
-  color: $white;
+  color: $bg-contrast;
   font-family: $font-main;
   font-size: $nav-font-size;
   cursor: pointer;
@@ -27,7 +27,7 @@ button {
 
 button:hover {
   background: $main-focus;
-  color: $white-focus;
+  color: $bg-contrast-focus;
 }
 
 button:active {
@@ -38,27 +38,27 @@ button:active {
 a {
   text-decoration: none;
   font-family: $font-main;
-  color: $white;
+  color: $bg-contrast;
   font-weight: 300;
   transition: all $short-tran ease-in;
 }
 
 a:hover,
 .active {
-  color: $dark;
+  color: $menu-color;
 }
 
 // Logos
 .navbar-brand {
   position: relative;
-  height: 60px;
+  height: $logoheight;
 }
 
 .logo {
   position: absolute;
   top: 0;
   left: 0;
-  height: 60px;
+  height: $logoheight;
   width: auto;
   padding: 0;
   cursor: pointer;

@@ -7,7 +7,7 @@
   &.diminished {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: $black;
+    background-color: $bg-color;
     transition: all $short-tran ease-in;
   }
 }
@@ -16,6 +16,10 @@ li {
   margin-left: 2rem;
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+.logo-placeholder {
+  height: $logoheight;
 }
 
 // Underline animation
@@ -27,7 +31,7 @@ main.nav {
 
     &::after {
       content: "";
-      border-bottom: solid 2px $white;
+      border-bottom: solid 2px $bg-contrast;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -39,7 +43,7 @@ main.nav {
 
     &:hover {
       &::after {
-        border-bottom: solid 2px $dark;
+        border-bottom: solid 2px $menu-color;
         transform-origin: left;
         transform: scaleX(1);
         transition: transform $short-tran, border $short-tran;
@@ -48,7 +52,7 @@ main.nav {
 
     &.active {
       &::after {
-        border-bottom: solid 2px $dark;
+        border-bottom: solid 2px $menu-color;
       }
     }
   }
@@ -73,7 +77,7 @@ main.nav {
     .right {
       width: 50%;
       height: 2px;
-      background: $white;
+      background: $bg-contrast;
       display: inline-block;
       margin-right: -4px;
       position: relative;
@@ -85,7 +89,7 @@ main.nav {
     height: 0px;
     display: inline-block;
     height: 2px;
-    background-color: $white;
+    background-color: $bg-contrast;
     box-sizing: border-box;
     animation: scales 0.5s;
     transition: border-color $short-tran ease-in;
@@ -235,7 +239,7 @@ main.nav {
 
 .mobile-wrapper {
   width: 400px;
-  background-color: $black;
+  background-color: $bg-color;
   height: 100vh;
   overflow: hidden;
   transform: translateX(-420px);
@@ -271,7 +275,7 @@ main.nav {
 // Footer
 
 .copyrights {
-  color: $dark;
+  color: $menu-color;
   margin: 1rem 0;
   font-weight: 200;
 

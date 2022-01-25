@@ -3,10 +3,10 @@
     class="mobile-wrapper d-flex flex-column justify-content-between align-items-center"
     [ngClass]="{ show: mobile.getState() }"
   >
-    <span></span>
+    <span class="logo-placeholder"></span>
     <ul>
       <li *ngFor="let item of menu">
-        <a class="" [routerLink]="item.en.link">{{ item.en.title }}</a>
+        <a class="" [routerLink]="item.en?.link">{{ item.en?.title }}</a>
       </li>
     </ul>
     <div class="footer">

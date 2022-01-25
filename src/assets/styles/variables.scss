@@ -2,10 +2,10 @@
 $main-color: #4190d5;
 $main-focus: #3c7cb4;
 $secondary-color: #49c4a8;
-$dark: #888888;
-$white: #f1f1f1;
-$white-focus: #f3f3f3;
-$black: #1b1b1b;
+$menu-color: #888888;
+$bg-contrast: #f1f1f1;
+$bg-contrast-focus: #f3f3f3;
+$bg-color: #1b1b1b;
 
 $backdrop: #1b1b1b3d;
 
@@ -23,3 +23,6 @@ $short-tran: 0.25s;
 
 // box-shadow
 $mobile-shadow: rgba(0, 0, 0, 0.4) 3px 3px 30px;
+
+// logo
+$logoheight: 60px;
