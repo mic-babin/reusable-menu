@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as data from '../data/menu';
 
 @Component({
   selector: 'app-main-nav',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-nav.component.scss'],
 })
 export class MainNavComponent implements OnInit {
+  menu = data.menu;
+
   constructor() {}
 
   ngOnInit(): void {

@@ -54,4 +54,10 @@ a:hover,
   width: auto;
   padding: 0;
   cursor: pointer;
+  z-index: 100;
+}
+
+// padding
+.p-nav {
+  padding-top: 120px;
 }
