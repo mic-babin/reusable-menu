@@ -4,6 +4,7 @@ import * as data from '../data/menu';
 import * as data2 from '../data/socials';
 import { Social } from '../models/social';
 import { Link } from '../models/link';
+import { LanguageService } from 'src/app/services/language.service';
 
 @Component({
   selector: 'app-mobile-nav',
@@ -15,7 +16,7 @@ export class MobileNavComponent implements OnInit {
   socials: Social[] = data2.socials;
   imgSrc?: string;
   year?: Number;
-  constructor(public mobile: MobileService) {}
+  constructor(public mobile: MobileService, public language: LanguageService) {}
 
   ngOnInit(): void {
     this.year = new Date().getFullYear();

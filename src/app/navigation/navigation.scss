@@ -27,6 +27,7 @@
     font-size: 20px;
     transform: translateX(-100px);
     cursor: pointer;
+    z-index: 100;
   }
 }
 li {
@@ -318,7 +319,7 @@ main.nav {
   width: 400px;
   background-color: $bg-color;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   transform: translateX(-420px);
   transition: transform $short-tran ease-in;
   box-shadow: $mobile-shadow;
@@ -334,7 +335,6 @@ main.nav {
     }
   }
   ul {
-    height: calc(100%);
     list-style: none;
     padding: 0;
     margin: 0;

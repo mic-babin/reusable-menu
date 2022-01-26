@@ -64,6 +64,19 @@ export const menu = [
     },
   },
   {
+    cta: false,
+    dropped: false,
+    lang: true,
+    fr: {
+      title: '',
+      link: '',
+    },
+    en: {
+      title: '',
+      link: '',
+    },
+  },
+  {
     cta: true,
     dropped: false,
     fr: {

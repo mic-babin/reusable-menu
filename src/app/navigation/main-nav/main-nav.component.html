@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
   <div class="container">
-    <a class="navbar-brand" href="/"
+    <a class="navbar-brand" routerLink="/" data-analytics="MainNavLogo"
       ><img class="logo" src="../../../assets/img/logo/logo.png" alt=""
     /></a>
 
@@ -8,15 +8,16 @@
 
     <div class="collapse navbar-collapse main-nav" id="navbarNav">
       <ul class="navbar-nav ms-auto d-flex align-items-center">
-        <li (click)="this.language.switch()">
-          <a class="lang">{{ "LANG" | translate }}</a>
-        </li>
         <ng-container *ngFor="let item of menu">
-          <li *ngIf="!item.cta" [ngClass]="{ dropdown: item.en?.dropdown }">
+          <li
+            *ngIf="!item.cta && !item.lang"
+            [ngClass]="{ dropdown: item.en?.dropdown }"
+          >
             <a
               [routerLink]="item.en?.link"
               routerLinkActive="active"
               *ngIf="!item.en.dropdown"
+              [attr.data-analytics]="'MainNav' + item.en.title"
             >
               {{ language.get() == "en" ? item.en?.title : item.fr?.title }}</a
             >
@@ -36,8 +37,9 @@
                   <a
                     class="dropdown-item"
                     [routerLink]="item.en.link + subItem.link"
+                    [attr.data-analytics]="'MainNav' + subItem.link"
                   >
-                    {{ item.en?.title }}
+                    {{ subItem.title }}
                   </a>
                 </li>
               </ng-container>
@@ -46,15 +48,27 @@
                   <a
                     class="dropdown-item"
                     [routerLink]="item.fr.link + subItem.link"
+                    [attr.data-analytics]="'MainNav' + subItem.link"
                   >
-                    {{ item.fr?.title }}
+                    {{ subItem.title }}
                   </a>
                 </li>
               </ng-container>
             </ul>
           </li>
+          <li *ngIf="item.lang" (click)="language.switch()">
+            <a
+              class="lang"
+              [attr.data-analytics]="'SwitchLangTo' + language.get()"
+              >{{ "LANG" | translate }}</a
+            >
+          </li>
           <li *ngIf="item.cta">
-            <button *ngIf="item.cta" [routerLink]="item.en?.link">
+            <button
+              *ngIf="item.cta"
+              [routerLink]="item.en?.link"
+              [attr.data-analytics]="'MainNav' + item.en?.title"
+            >
               {{ language.get() == "en" ? item.en?.title : item.fr?.title }}
             </button>
           </li>

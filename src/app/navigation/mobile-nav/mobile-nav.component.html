@@ -4,42 +4,58 @@
     [ngClass]="{ show: mobile.getState() }"
   >
     <span class="logo-placeholder"></span>
-    <ul
-      class="d-flex flex-column justify-content-center align-items-center mobile-links"
-    >
-      <li
-        *ngFor="let item of menu"
-        [ngClass]="{ ' dropdown': item.en?.dropdown }"
-      >
-        <a
-          [routerLink]="item.en?.link"
-          routerLinkActive="active"
-          *ngIf="!item.en.dropdown"
-        >
-          {{ item.en?.title }}</a
-        >
-        <a
-          *ngIf="item.en.dropdown"
-          class="dropdown-toggle"
-          (click)="item.dropped = !item.dropped"
-          >{{ item.en?.title }}
-        </a>
-        <ul class="dropdown-mobile" [ngClass]="{ 'dropped ': item.dropped }">
-          <li *ngFor="let subItem of item.en.dropdown">
-            <a
-              class="dropdown-item"
-              [routerLink]="item.en.link + subItem.link"
-              >{{ subItem.title }}</a
-            >
-          </li>
-        </ul>
-      </li>
+    <ul class="d-flex flex-column align-items-center mobile-links">
+      <ng-container *ngFor="let item of menu">
+        <li [ngClass]="{ ' dropdown': item.en?.dropdown }" *ngIf="!item.lang">
+          <a
+            [routerLink]="item.en?.link"
+            routerLinkActive="active"
+            *ngIf="!item.en.dropdown"
+            [attr.data-analytics]="'MainNav' + item.en?.title"
+          >
+            {{ item.en?.title }}</a
+          >
+          <a
+            *ngIf="item.en.dropdown"
+            class="dropdown-toggle"
+            (click)="item.dropped = !item.dropped"
+            >{{ item.en?.title }}
+          </a>
+          <ul class="dropdown-mobile" [ngClass]="{ 'dropped ': item.dropped }">
+            <ng-container *ngIf="language.get() === 'en'">
+              <li *ngFor="let subItem of item.en.dropdown">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="item.en.link + subItem.link"
+                  [attr.data-analytics]="'MainNav' + subItem.link"
+                  >{{ subItem.title }}</a
+                >
+              </li>
+            </ng-container>
+            <ng-container *ngIf="language.get() === 'fr'">
+              <li *ngFor="let subItem of item.fr.dropdown">
+                <a
+                  class="dropdown-item"
+                  [routerLink]="item.fr.link + subItem.link"
+                  [attr.data-analytics]="'MainNav' + subItem.link"
+                  >{{ subItem.title }}</a
+                >
+              </li>
+            </ng-container>
+          </ul>
+        </li>
+      </ng-container>
     </ul>
     <div class="footer">
       <div class="socials">
         <ul class="d-flex justify-content-around align-items-center">
           <li *ngFor="let social of socials">
-            <a [href]="social.url" target="_blank" ref="noreferrer noopener">
+            <a
+              [href]="social.url"
+              target="_blank"
+              ref="noreferrer noopener"
+              [attr.data-analytics]="'MainNav' + social.name"
+            >
               <img
                 class="icons"
                 [src]="'../../../assets/img/icons/' + social.name + '.svg'"
