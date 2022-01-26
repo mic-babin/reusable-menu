@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
 import { MobileService } from '../services/mobile.service';
 
 @Component({
@@ -9,7 +10,10 @@ import { MobileService } from '../services/mobile.service';
 export class HamburgerComponent implements OnInit {
   isOpened = false;
 
-  constructor(private mobile: MobileService) {}
+  constructor(
+    private mobile: MobileService,
+    public language: LanguageService
+  ) {}
 
   ngOnInit(): void {}
 

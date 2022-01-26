@@ -19,6 +19,5 @@ export class MobileNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.year = new Date().getFullYear();
-    console.log(this.year);
   }
 }

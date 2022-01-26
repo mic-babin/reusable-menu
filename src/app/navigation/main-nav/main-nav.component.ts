@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LanguageService } from 'src/app/services/language.service';
 import * as data from '../data/menu';
 import { Link } from '../models/link';
 
@@ -10,7 +11,7 @@ import { Link } from '../models/link';
 export class MainNavComponent implements OnInit {
   menu = data.menu;
 
-  constructor() {}
+  constructor(public language: LanguageService) {}
 
   ngOnInit(): void {
     window.addEventListener('scroll', () => {

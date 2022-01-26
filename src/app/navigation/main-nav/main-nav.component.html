@@ -8,6 +8,9 @@
 
     <div class="collapse navbar-collapse main-nav" id="navbarNav">
       <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <li (click)="this.language.switch()">
+          <a class="lang">{{ "LANG" | translate }}</a>
+        </li>
         <ng-container *ngFor="let item of menu">
           <li *ngIf="!item.cta" [ngClass]="{ dropdown: item.en?.dropdown }">
             <a
@@ -15,7 +18,7 @@
               routerLinkActive="active"
               *ngIf="!item.en.dropdown"
             >
-              {{ item.en?.title }}</a
+              {{ language.get() == "en" ? item.en?.title : item.fr?.title }}</a
             >
             <a
               *ngIf="item.en.dropdown"
@@ -25,22 +28,34 @@
               role="button"
               data-bs-toggle="dropdown"
               aria-expanded="false"
-              >{{ item.en?.title }}
+              >{{ language.get() == "en" ? item.en?.title : item.fr?.title }}
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li *ngFor="let subItem of item.en.dropdown">
-                <a
-                  class="dropdown-item"
-                  [routerLink]="item.en.link + subItem.link"
-                  >{{ subItem.title }}</a
-                >
-              </li>
+              <ng-container *ngIf="language.get() === 'en'">
+                <li *ngFor="let subItem of item.en.dropdown">
+                  <a
+                    class="dropdown-item"
+                    [routerLink]="item.en.link + subItem.link"
+                  >
+                    {{ item.en?.title }}
+                  </a>
+                </li>
+              </ng-container>
+              <ng-container *ngIf="language.get() === 'fr'">
+                <li *ngFor="let subItem of item.fr.dropdown">
+                  <a
+                    class="dropdown-item"
+                    [routerLink]="item.fr.link + subItem.link"
+                  >
+                    {{ item.fr?.title }}
+                  </a>
+                </li>
+              </ng-container>
             </ul>
           </li>
-
           <li *ngIf="item.cta">
             <button *ngIf="item.cta" [routerLink]="item.en?.link">
-              {{ item.en?.title }}
+              {{ language.get() == "en" ? item.en?.title : item.fr?.title }}
             </button>
           </li>
         </ng-container>

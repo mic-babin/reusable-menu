@@ -9,7 +9,6 @@ export class MobileService {
   constructor() {}
 
   setState(isOpened: boolean) {
-    console.log(isOpened);
     this.isOpened = isOpened;
     return this.isOpened;
   }
