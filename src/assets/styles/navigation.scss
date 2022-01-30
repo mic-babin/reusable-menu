@@ -7,7 +7,7 @@
   &.diminished {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    background-color: $bg-color;
+    background-color: $nav-bg-color;
     transition: all $short-tran ease-in;
   }
 }
@@ -88,7 +88,7 @@ li {
 
   .dropdown-item:hover,
   .dropdown-item:focus {
-    background-color: $bg-color;
+    background-color: $nav-bg-color;
   }
 
   li {
@@ -106,6 +106,7 @@ main.nav {
     position: relative;
     display: inline-block;
     padding: 0.5rem 0;
+    color: $bg-contrast;
 
     &::after {
       content: "";
@@ -317,7 +318,7 @@ main.nav {
 
 .mobile-wrapper {
   width: 400px;
-  background-color: $bg-color;
+  background-color: $nav-bg-color;
   height: 100vh;
   // overflow: hidden;
   transform: translateX(-420px);
@@ -360,7 +361,7 @@ main.nav {
     transition: transform $short-tran ease-in;
   }
   ::-webkit-scrollbar {
-    background-color: $bg-color;
+    background-color: $nav-bg-color;
     width: 8px;
   }
   ::-webkit-scrollbar-thumb {
@@ -368,23 +369,31 @@ main.nav {
   }
 
   ::selection {
-    color: #ffffff !important;
+    color: $bg-contrast !important;
     background-color: $main-color !important;
   }
 }
 
 // Footer
-
 .copyrights {
-  color: $menu-color;
+  color: $bg-contrast;
   margin: 1rem;
-  font-weight: 200;
-  font-size: 14px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.mobile-wrapper {
+  .copyrights {
+    color: $menu-color;
+    margin: 1rem;
+    font-weight: 200;
+    font-size: 14px;
+  }
 }
 
 .socials {
   ul {
     margin: 1rem;
+    list-style: none;
   }
   .icons {
     height: 25px;

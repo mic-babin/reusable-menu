@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
-  <div class="container">
+  <div class="container-fluid mx-5">
     <a class="navbar-brand" routerLink="/" data-analytics="MainNavLogo"
       ><img class="logo" src="../../../assets/img/logo/logo.png" alt=""
     /></a>
@@ -14,6 +14,7 @@
             [ngClass]="{ dropdown: item.en?.dropdown }"
           >
             <a
+              class="navigation-link"
               [routerLink]="item.en?.link"
               routerLinkActive="active"
               *ngIf="!item.en.dropdown"
@@ -23,7 +24,7 @@
             >
             <a
               *ngIf="item.en.dropdown"
-              class="dropdown-toggle"
+              class="dropdown-toggle navigation-link"
               href="#"
               id="navbarDropdown"
               role="button"
@@ -35,7 +36,7 @@
               <ng-container *ngIf="language.get() === 'en'">
                 <li *ngFor="let subItem of item.en.dropdown">
                   <a
-                    class="dropdown-item"
+                    class="dropdown-item navigation-link"
                     [routerLink]="item.en.link + subItem.link"
                     [attr.data-analytics]="'MainNav' + subItem.link"
                   >
@@ -46,7 +47,7 @@
               <ng-container *ngIf="language.get() === 'fr'">
                 <li *ngFor="let subItem of item.fr.dropdown">
                   <a
-                    class="dropdown-item"
+                    class="dropdown-item navigation-link"
                     [routerLink]="item.fr.link + subItem.link"
                     [attr.data-analytics]="'MainNav' + subItem.link"
                   >

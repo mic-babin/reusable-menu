@@ -35,15 +35,20 @@ button:active {
 }
 
 // Links
-a {
+.navigation-link,
+.lang {
   text-decoration: none;
   font-family: $font-main;
   color: $bg-contrast;
-  font-weight: 300;
+  font-weight: 400;
   transition: all $short-tran ease-in;
 }
+.lang {
+  font-weight: 600;
+}
 
-a:hover,
+.navigation-link:hover,
+.lang:hover,
 .active {
   color: $menu-color;
 }

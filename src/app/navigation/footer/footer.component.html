@@ -1,0 +1,24 @@
+<div class="footer d-flex justify-content-between mx-5">
+  <div class="copyrights">© Michael Babin {{ year }}. All Rights Reserved.</div>
+  <div class="socials">
+    <ul class="d-flex justify-content-around align-items-center">
+      <li *ngFor="let social of socials">
+        <a
+          [href]="social.url"
+          target="_blank"
+          ref="noreferrer noopener"
+          [attr.data-analytics]="'MainNav' + social.name"
+        >
+          <img
+            class="icons"
+            [src]="'../../../assets/img/icons/' + social.name + '.svg'"
+            (mouseover)="social.name = social.name + '-main'"
+            (mouseout)="
+              social.name = social.name.substring(0, social.name.length - 5)
+            "
+            [alt]="social.name"
+        /></a>
+      </li>
+    </ul>
+  </div>
+</div>
