@@ -8,7 +8,7 @@ import { LanguageService } from './services/language.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'wordpress-headless';
+  title = 'reusable-menu';
 
   constructor(
     private translate: TranslateService,

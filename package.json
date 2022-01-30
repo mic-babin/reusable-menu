@@ -1,5 +1,5 @@
 {
-  "name": "wordpress-headless",
+  "name": "reusable-menu",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
