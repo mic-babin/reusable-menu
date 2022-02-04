@@ -1,0 +1,16 @@
+<div class="container p-nav h-100">
+  <div class="row h-100">
+    <div class="d-flex flex-column justify-content-center">
+      <h1 class="mb-3">Mic B. Dev</h1>
+      <h2 class="mb-5"><span>Angular</span> Lead Programer</h2>
+      <div
+        class="hero-cta d-flex justify-content-start align-items-center"
+        (mouseover)="playIcon = playIcon + '-main'"
+        (mouseout)="playIcon = playIcon.substring(0, playIcon.length - 5)"
+      >
+        <app-play-btn></app-play-btn>
+        <span class="ms-3">Play Resume</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -395,13 +395,24 @@ main.nav {
     margin: 1rem;
     list-style: none;
   }
-  .icons {
-    height: 25px;
-    width: auto;
-    transition: transform $short-tran ease-in;
-    &:hover {
-      transform: scale(1.05);
-      transition: transform $short-tran ease-in;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  ul {
+    padding-left: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .footer {
+    ul {
+      li {
+        margin: 0 1rem;
+      }
     }
   }
 }

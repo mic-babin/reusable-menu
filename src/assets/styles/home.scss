@@ -1,0 +1,58 @@
+.home-wrapper {
+  background: url(../img/home/AdobeStock_327775596.jpeg) no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1,
+h3,
+div {
+  color: $bg-contrast;
+}
+
+h1,
+h3 {
+  font-size: 6.54rem;
+  font-family: $font-secondary;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 3rem;
+  span {
+    color: $main-color;
+  }
+}
+
+.hero-cta {
+  transform: translateX(-405px);
+  span {
+    transition: all $short-tran ease-in;
+    font-size: 1.25rem;
+  }
+
+  &::before {
+    content: "";
+    background-color: $bg-contrast;
+    height: 1px;
+    width: 400px;
+    transform: translateX(-20px);
+  }
+
+  &:hover {
+    span {
+      color: $main-color;
+      transition: all $short-tran ease-in;
+    }
+    svg {
+      fill: $main-color;
+      transition: all $short-tran ease-in;
+    }
+  }
+}
+
+svg {
+  fill: $bg-contrast;
+  transition: all $short-tran ease-in;
+}

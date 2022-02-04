@@ -46,7 +46,7 @@
         </li>
       </ng-container>
     </ul>
-    <div class="footer">
+    <div class="mobile-footer">
       <div class="socials">
         <ul class="d-flex justify-content-around align-items-center">
           <li *ngFor="let social of socials">
@@ -58,7 +58,9 @@
             >
               <img
                 class="icons"
-                [src]="'../../../assets/img/icons/' + social.name + '.svg'"
+                [src]="
+                  '../../../assets/img/icons/socials/' + social.name + '.svg'
+                "
                 (mouseover)="social.name = social.name + '-main'"
                 (mouseout)="
                   social.name = social.name.substring(0, social.name.length - 5)
