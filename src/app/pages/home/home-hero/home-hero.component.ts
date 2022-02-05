@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { VideoPlayerComponent } from '../video-player/video-player.component';
 
 @Component({
   selector: 'app-home-hero',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeHeroComponent implements OnInit {
   playIcon: string = 'play';
-  constructor() {}
+  constructor(public modal: NgbModal) {}
 
   ngOnInit(): void {}
+
+  openPlayer() {
+    this.modal.open(VideoPlayerComponent, {
+      size: 'lg',
+      centered: true,
+    });
+  }
 }
