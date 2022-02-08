@@ -1,0 +1,46 @@
+.contact-wrapper {
+  background: url(../img/contact/bg.jpg) no-repeat;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  p {
+    color: #999;
+    font-family: $font-secondary;
+    font-size: 1.57rem;
+    font-weight: 400;
+    line-height: 1.5em;
+
+    span {
+      color: $bg-contrast;
+    }
+  }
+
+  a {
+    color: $main-color;
+
+    &:hover {
+      color: $bg-contrast;
+    }
+  }
+}
+input[type="email"],
+input[type="text"],
+textarea {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.75rem 1rem;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  outline: 0;
+  background-color: #2f2f2f;
+  -webkit-box-shadow: 0 0 2.08333rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 2.08333rem rgba(0, 0, 0, 0.5);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}

@@ -6,6 +6,45 @@
   color: $main-color;
 }
 
+.txt-contrast {
+  color: $bg-contrast;
+}
+
+// Titles
+h1,
+h3 {
+  font-size: 6.54rem !important;
+  font-family: $font-secondary;
+  font-weight: 600 !important;
+  color: $bg-contrast;
+}
+
+h2 {
+  font-size: 3rem !important;
+  color: $bg-contrast;
+  span {
+    color: $main-color;
+  }
+}
+
+.vertical-title {
+  letter-spacing: 0.025em;
+  line-height: 1.9428;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
+  font-size: 8.16667rem;
+  font-weight: 600;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  font-family: $font-main;
+  left: 0;
+  transform: translate(-27%, -50%) rotate(270deg);
+  text-align: center;
+  opacity: 0.06;
+  text-transform: lowercase;
+  color: $bg-contrast;
+}
 // buttons
 button {
   display: inline-block;
@@ -35,9 +74,11 @@ button:active {
 }
 
 // Links
+
 .navigation-link,
-.lang {
-  text-decoration: none;
+.lang,
+a {
+  text-decoration: none !important;
   font-family: $font-main;
   color: $bg-contrast;
   font-weight: 400;
@@ -49,7 +90,7 @@ button:active {
 
 .navigation-link:hover,
 .lang:hover,
-.active {
+a:hover .active {
   color: $menu-color;
 }
 

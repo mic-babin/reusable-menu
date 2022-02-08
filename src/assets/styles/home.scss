@@ -1,28 +1,8 @@
 .home-wrapper {
-  background: url(../img/home/AdobeStock_327775596.jpeg) no-repeat;
+  background: url(../img/home/bg.jpeg) no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-h1,
-h3,
-div {
-  color: $bg-contrast;
-}
-
-h1,
-h3 {
-  font-size: 6.54rem;
-  font-family: $font-secondary;
-  font-weight: 600;
-}
-
-h2 {
-  font-size: 3rem;
-  span {
-    color: $main-color;
-  }
 }
 
 .hero-cta {

@@ -1,0 +1,96 @@
+<form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="pt-lg-5">
+  <div class="row px-5 pt-2">
+    <div class="col-md-6 pb-3">
+      <input
+        type="text"
+        class=""
+        formControlName="name"
+        [placeholder]="language.get() == 'fr' ? 'Nom' : 'Name'"
+      />
+    </div>
+    <div class="col-md-6 pb-3">
+      <input
+        type="text"
+        class=""
+        formControlName="email"
+        [placeholder]="language.get() == 'fr' ? 'Courriel' : 'Email'"
+      />
+      <span
+        *ngIf="
+          !contactForm.get('email').valid && contactForm.get('email').touched
+        "
+        class="txt-main"
+        >**{{ "INVALID_EMAIL" | translate }}</span
+      >
+    </div>
+    <div class="col-md-12 pb-3">
+      <input
+        type="text"
+        class=""
+        formControlName="subject"
+        [placeholder]="language.get() == 'fr' ? 'Sujet' : 'Subject'"
+      />
+    </div>
+
+    <div class="col-12 pb-3">
+      <textarea
+        rows="5"
+        class=""
+        formControlName="message"
+        [placeholder]="
+          language.get() == 'fr'
+            ? 'Comment puis-je vous aider...'
+            : 'How can I help you...'
+        "
+      ></textarea>
+    </div>
+    <div class="col-12 d-flex">
+      <div
+        class="ms-auto"
+        *ngIf="!contactForm.valid && contactForm.touched"
+        class=""
+      >
+        **{{ "REQUIRED_FIELDS" | translate }}
+      </div>
+    </div>
+  </div>
+
+  <div class="px-5 pt-3 mb-4 d-flex justify-content-end">
+    <button
+      [disabled]="!contactForm.valid || !contactForm.dirty"
+      class="btn-april mt-3"
+      (click)="openModal(confirmContact)"
+      data-analytics="ContactForm"
+    >
+      {{ "CONTACT_ME" | translate }}
+    </button>
+  </div>
+</form>
+
+<!-- Modal -->
+<ng-template #confirmContact let-modal>
+  <div class="modal-header d-flex justify-content-center align-items-center">
+    <h2 class="modal-title m-0">{{ "THANK_YOU" | translate }}</h2>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true"
+        ><img
+          class="icon"
+          src="../../../../../assets/img/icons/close.svg"
+          alt=""
+      /></span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p class="m-2 mx-3">{{ "CONTACT_FORM_DETAILS" | translate }}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn-april btn-april-white" (click)="close()">
+      {{ "CLOSE" | translate }}
+    </button>
+  </div>
+</ng-template>
